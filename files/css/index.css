@@ -67,7 +67,8 @@ body, .body{
 .extendedSection{
     position: relative;
     text-align: center;
-    width: 100%;
+    width: auto;
+    box-sizing: border-box;
 }
 .extendedSection::before{
         content: "";
