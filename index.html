@@ -2,10 +2,13 @@
 <html>
     <head>
         <title>Shreya5art</title>
-        <base href ="/" />
+        <base href ="file:///Users/ar4j.in/Desktop/shreya5art.github.io/" />
         <link rel="stylesheet" href="files/css/index.css" />
         <link rel="stylesheet" href="files/css/dark.css" />
+        <link rel="stylesheet" media="(max-width: 1200px)" href="files/css/tab.css" />
+        <link rel="stylesheet" media="(max-width: 600px)" href="files/css/mobile.css" />
         <link href="files/icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         
@@ -21,7 +24,7 @@
         </div>
 
         <div id="order" class="mainContainer row">
-
+            
             <div class="col main">
                 <div class="notebook about">
                     <div class="paperstack tabbed">
@@ -44,52 +47,85 @@
 
         </div>
 
-        <div id="home" class="mainContainer row" style="">
-            <div class="col main">
-                <div class="notebook homeNotebook col">
-                    <div class="paperstack spiral col">
-                        <h2>My Artworks</h2>
-                        <div class="artwork compact">
-                            <div class="thumbnail" style=" width: 165px; background-image: url(files/img/1.jpg);"></div>
-                            <div class="thumbnail" style=" width: 100px; background-image: url(files/img/2.jpg);"></div>
-                            <div class="thumbnail" style=" width: 80px; background-image: url(files/img/3.jpg);"></div>
-                            <div class="thumbnail" style=" width: 70px; background-image: url(files/img/3.jpg);"></div>
-                            <div class="thumbnail" style=" width: 100px; background-image: url(files/img/1.jpg);"></div>
-                        </div>
-                        <div>
-                            <button class="button"> See More Artworks </button>
-                            <button class="button"> Order Your Own </button>
-                        </div>
-                    </div><div class="paperstack spiral col">
-                        <div class="dp"></div>
-                        <h2 style="display: inline-block; margin-top: 70px;">Hello,</h2>
-                        <p>I am Shreya, an artist from Patna, Bihar, India. 
-                            I usually work with color and graphite pencils. 
-                            I love drawing Portraits.</p>
-                    </div>    
-                </div>
-            </div>
-            <div class="col left single">
-                <div class="smartphone">
-                    <h3>Order Custom Artwork</h4>
-                    
-                    <div style="margin-top: 2em;">
-                        <img class="polaroid" style="width: 100px;" src="files/img/reference.jpg" />
-                        <img class="polaroid" style="width: 80px;" src="files/img/order1.jpg" />
+        <div id="home" class="mainContainer row active" style="">
+            <div class="homeTop" style="">
+                <div class="col main">
+                    <div class="notebook homeNotebook col">
+                        <div class="paperstack artworkPage spiral col">
+                            <h2>My Artworks</h2>
+                            <div class="artworkBox compact">
+                                <div class="thumbnail" style=" width: 165px; background-image: url(files/img/1.jpg);"></div>
+                                <div class="thumbnail" style=" width: 100px; background-image: url(files/img/2.jpg);"></div>
+                                <div class="thumbnail" style=" width: 80px; background-image: url(files/img/3.jpg);"></div>
+                                <div class="thumbnail" style=" width: 70px; background-image: url(files/img/3.jpg);"></div>
+                                <div class="thumbnail" style=" width: 100px; background-image: url(files/img/1.jpg);"></div>
+                            </div>
+                            <div class="buttonBox">
+                                <button class="button colored"> See More Artworks </button>
+                                <button class="button"> Order Your Own </button>
+                            </div>
+                        </div><div class="paperstack artworkPage spiral col">
+                            <div class="dp"></div>
+                            <h2 style="display: inline-block; margin-top: 50px;">Hello,</h2>
+                            <p>I am Shreya, an artist from Patna, Bihar, India. 
+                                I usually work with color and graphite pencils. 
+                                I love drawing Portraits.</p>
+                                <div class="buttonBox">
+                                    <button class="button colored"> More About Me </button>
+                                    <button class="button"> Contact </button>
+                                    
+                                </div>
+                        </div>    
                     </div>
-
-                    <p>
-                        10% off on Couple Drawing
-                    </p>
-                    <p>
-                        Starting at $40
-                    </p>
-
-                    <button>Order Now</button>
                 </div>
-            </div>
-            <div class="col right single">
-                <div class="contactCard col">
+                    <div class="smartphone col single">
+                        <h3>Custom Artwork</h4>
+                        
+                        <div style="margin-top: 2em;margin-bottom: 2em;">
+                            <img class="polaroid" style="width: 100px;" src="files/img/reference.jpg" />
+                            <img class="polaroid" style="width: 80px;" src="files/img/order1.jpg" />
+                        </div>
+    
+                        <p style="font-size: .8em;">
+                            10% off on Couple Drawing
+                        </p>
+                        <p style="font-size: 1.25em;">
+                            Starting at $40
+                        </p>
+    
+                        <button class="button colored" style="margin-top: 1em;">Order Now</button>
+                    </div>
+                
+                <div class="col card instagram single homeExtra">
+                    <div class="instagramStats">
+                        <div class="dp"></div>
+                        <div class="stat">
+                            <span class="value">271</span>
+                            <span class="title">Posts</span>
+                        </div>
+                        <div class="stat">
+                            <span class="value">30.9k</span>
+                            <span class="title">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="value">950</span>
+                            <span class="title">Following</span>
+                        </div>
+                    </div>
+                    <div class="instagramBio">
+                        <P class="name">Shreya5art™ | Artist</P>
+                        <P class="desig">Artist</P>
+                        <P class="bio">A Self taught artist from Bihar, India 🇮🇳<br />
+                        22 y/o 👧<br />
+                        📥DM/Mail to place Order for Custom drawing 🎁<br />
+                        #artist #art #bihar #sketch #portrait</p>
+                    </div>
+                    <div class="instagramFollow">
+                        <a href="https://shreya5art.in/shreya5art" class="button fa-brands fa-instagram"></a>
+                    </div>
+                    
+                </div>
+                <div class="contactCard col single homeExtra">
                     <div class="col shadow"></div>
                     <div class="col cardFace shadow">
                         <h2>Shreya</h2>
@@ -108,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="reviewEnvelope col">
+                <div class="reviewEnvelope col single homeExtra">
                     
                     <div class="review col slideShow shadow" tabindex="0">
                         <div class="thumbnailBox">
@@ -129,6 +165,7 @@
                             </p>
                         </div>
                     </div>
+                    
                     <div class="review col slideShow shadow" tabindex="0">
                         <div class="thumbnailBox">
                             <span class="thumbnail" ></span>
@@ -170,11 +207,24 @@
                     
                     <a href="reviews">See All Reviews</a>
                 </div>
+                
             </div>
-            <div class="row">
-                <div class="col">
+            
+            <div class="row homeExtra">
+                
+            </div>
+            <div class="row homeSections">
+                
                     <h3>Youtube Videos</h3>
-                    <iframe class="youtubeVid" width="250" height="180"
+                    <a class="youtubeVid fa-brands fa-youtube" href="https://youtube.com/watch?v=lXHn07RDvGM" style=" background-image: url(https://img.youtube.com/vi/lXHn07RDvGM/sddefault.jpg);" >
+                    </a> 
+                    <a class="youtubeVid fa-brands fa-youtube" href="https://youtube.com/watch?v=CZT7PHv-gUk" style=" background-image: url(https://img.youtube.com/vi/CZT7PHv-gUk/sddefault.jpg);" >
+                    </a> 
+                    <a class="youtubeVid fa-brands fa-youtube" href="https://youtube.com/watch?v=aUOh48m8TRI" style=" background-image: url(https://img.youtube.com/vi/aUOh48m8TRI/sddefault.jpg);" >
+                    </a> 
+                    <a class="youtubeVid fa-brands fa-youtube" href="https://youtube.com/watch?v=oNeYNCFiB-A"  style=" background-image: url(https://img.youtube.com/vi/oNeYNCFiB-A/sddefault.jpg);" >
+                    </a> 
+                    <!--<iframe class="youtubeVid" width="250" height="180"
                         src="https://www.youtube.com/embed/lXHn07RDvGM?autoplay=0&mute=1">
                     </iframe>
                     <iframe class="youtubeVid" width="250" height="180"
@@ -185,16 +235,23 @@
                     </iframe>
                     <iframe class="youtubeVid" width="250" height="180"
                         src="https://www.youtube.com/embed/oNeYNCFiB-A?autoplay=0&mute=1">
-                    </iframe>
-                </div>
+                    </iframe>-->
+                    <a class="youtubeVid seeMore  fa-brands fa-youtube" href="https://youtube.com/shreya5art">
+                        
+                    </a>
+                
                 
             </div>
-            <div class="row">
+            <div class="row homeSections" >
                 <div class="col">
                     <h3>Buy Tools I Use</h3>
-                    <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=shreya0035-21&language=en_IN&marketplace=amazon&region=IN&placement=B000C6RHBW&asins=B000C6RHBW&linkId=0735d9df5cad89c516bed440869e56cc&show_border=true&link_opens_in_new_window=true"></iframe>
-                    <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=shreya0035-21&language=en_IN&marketplace=amazon&region=IN&placement=B08R7PC9LD&asins=B08R7PC9LD&linkId=8ec8cc70be451a628d95a817672ba4b6&show_border=true&link_opens_in_new_window=true"></iframe>
-                    <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=shreya0035-21&language=en_IN&marketplace=amazon&region=IN&placement=B08LZMGZQK&asins=B08LZMGZQK&linkId=2ae205e130a22aa4029820d10f7b254e&show_border=true&link_opens_in_new_window=true"></iframe>
+                    <iframe class="amazonItem" sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=shreya0035-21&language=en_IN&marketplace=amazon&region=IN&placement=B000C6RHBW&asins=B000C6RHBW&linkId=0735d9df5cad89c516bed440869e56cc&show_border=true&link_opens_in_new_window=true"></iframe>
+                    <iframe class="amazonItem" sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=shreya0035-21&language=en_IN&marketplace=amazon&region=IN&placement=B08R7PC9LD&asins=B08R7PC9LD&linkId=8ec8cc70be451a628d95a817672ba4b6&show_border=true&link_opens_in_new_window=true"></iframe>
+                    <iframe  class="amazonItem"sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=shreya0035-21&language=en_IN&marketplace=amazon&region=IN&placement=B08LZMGZQK&asins=B08LZMGZQK&linkId=2ae205e130a22aa4029820d10f7b254e&show_border=true&link_opens_in_new_window=true"></iframe>
+                    
+                    <a class="amazonItem seeMore  fa-brands fa-amazon" href="https://amazon.in/shop/shreya5art">
+                        
+                    </a>
                 </div>
                 
             </div>
@@ -566,60 +623,64 @@
 
         
         <div id="footer" class="extendedSection row"  >
-            <div class="stats">
-                <div class="stat">
-                    <span class="title">Artworks</span>
-                    <span class="value">100</span>
-                </div>
-                <div class="stat">
-                    <span class="title">Orders</span>
-                    <span class="value">50</span>
-                </div>
-                <div class="stat">
-                    <span class="title">Avg Rating</span>
-                    <span class="value">4.5</span>
-                </div>
-                <div class="stat">
-                    <span class="title">Happy Clients</span>
-                    <span class="value">98%</span>
+            <div style="text-align: justify; text-align-last: justify;">
+                <div class="stats">
+                    <div class="stat">
+                        <span class="title">Artworks</span>
+                        <span class="value">100</span>
+                    </div>
+                    <div class="stat">
+                        <span class="title">Orders</span>
+                        <span class="value">50</span>
+                    </div>
+                    <div class="stat">
+                        <span class="title">Avg Rating</span>
+                        <span class="value">4.5</span>
+                    </div>
+                    <div class="stat">
+                        <span class="title">Happy Clients</span>
+                        <span class="value">98%</span>
+                    </div>
                 </div>
             </div>
-
-            <nav class="footerNav" >
-                <a>Gallery</a>
-                <a>Buy Prints</a>
-                <a>Graphite Artworks</a>
-                <a>Color Artworks</a>
-            </nav>
-            <nav class="footerNav">
-                <a>Order</a>
-                <a>Track</a>
-                <a>Reviews</a>
-                <a>FAQs</a>
-            </nav>
-            <nav class="footerNav">
-                <a>Blog</a>
-                <a>Tools</a>
-                <a>About</a>
-                <a>Contact</a>
-            </nav>
-            <nav class="footerNav" style="text-align: right;">
-                <a>T & C</a>
-                <a>Privacy Policy</a>
-                <a>Advertise</a>
-                <a>Collaborate</a>
-            </nav>
-            <nav class="footerNav" style="text-align: right;">
-                <a>Instagram</a>
-                <a>Facebook</a>
-                <a>Twitter</a>
-                <a>Youtube</a>
-            </nav>
+            <div style="text-align: justify; text-align-last: justify; padding: 1em">
+                <nav class="footerNav" >
+                    <a>Gallery</a>
+                    <a>Buy Prints</a>
+                    <a>Graphite Artworks</a>
+                    <a>Color Artworks</a>
+                </nav>
+                <nav class="footerNav">
+                    <a>Order</a>
+                    <a>Track</a>
+                    <a>Reviews</a>
+                    <a>FAQs</a>
+                </nav>
+                <nav class="footerNav">
+                    <a>Blog</a>
+                    <a>Tools</a>
+                    <a>About</a>
+                    <a>Contact</a>
+                </nav>
+                <nav class="footerNav" style="text-align: right;">
+                    <a>T & C</a>
+                    <a>Privacy Policy</a>
+                    <a>Advertise</a>
+                    <a>Collaborate</a>
+                </nav>
+                <nav class="footerNav" style="text-align: right;">
+                    <a>Instagram</a>
+                    <a>Facebook</a>
+                    <a>Twitter</a>
+                    <a>Youtube</a>
+                </nav>
+            </div>
+            
             <p>
-                <a style="display: inline-block;text-align-last: left;">© Shreya5art 2015-2023 | All Rights Reserved</a>
-                </p>
+                <a style="display: inline-block;text-align-last: center;">© Shreya5art 2015-2023 | All Rights Reserved</a>
+            </p>
                 <p>
-            <a style="display: inline-block;text-align-last: left;">Developed by Trijyas.in</a>
+            <a style="display: inline-block;text-align-last: center;">Developed by Trijyas.in</a>
             </p>
             
         </div>
