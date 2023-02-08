@@ -18,7 +18,7 @@ body, .body{
     max-width: 1280px;
     margin: auto; padding: 0;
     text-align: center;
-    padding-top: 8em;
+    
 }
 .body{
     max-width: 1280px;
@@ -85,8 +85,8 @@ body, .body{
 }
 
 #topbar{
-    position: absolute;
-    top: 0; left: 0;
+    position: sticky;
+    top: 0;
     height: 5em;
     width: 100%;
     box-sizing: border-box;
@@ -96,11 +96,14 @@ body, .body{
 
     z-index: 5;
 
+    margin-bottom: 2em;
+
+    background-image: linear-gradient(to top right, transparent, transparent,  rgba(0,0,0,0.4));
     
 }
 #topbar > nav{
     height: 100%;
-    background-image: linear-gradient(to top right, transparent, transparent,  rgba(0,0,0,0.4));
+    
 }
 
 .logo{
