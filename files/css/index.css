@@ -972,24 +972,24 @@ nav > a{
     word-wrap: break-word;
     word-break: normal;
     white-space:normal;
-    max-height: 2em;
+    height: 2.4em;
     font-size: 1em;
+    line-height: 1.2em;
     text-overflow: ellipsis;
-    display: inline-block;
+    display: block;
+    overflow: hidden;
     text-decoration: none;
     text-align: left;
     text-align-last: left;
 }
-.amzn-ad-container{
-    width: 220px;
-    
+.amazonItem > img {
+    display: block;
+    position: relative;
+    margin: 1em auto;
+    height: 150px;
+    max-width: 100%;
 }
-.amzn-ad-primary-btn{
-    display: none;
-}
-.amzn-ad-logo-holder{
-    display: none;
-}
+
 
 
 .card{
