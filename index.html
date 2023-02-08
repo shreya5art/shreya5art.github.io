@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Shreya5art</title>
-        <base href ="file:///Users/ar4j.in/Desktop/shreya5art.github.io/" />
+        <base href ="" />
         <link rel="stylesheet" href="files/css/index.css" />
         <link rel="stylesheet" href="files/css/dark.css" />
         <link rel="stylesheet" media="(max-width: 1200px)" href="files/css/tab.css" />
@@ -11,6 +11,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+
+        <script>
+            var base = document.createElement('base');
+            console.log( window.location.protocol + window.location.pathname);
+            if(window.location.protocol.includes("file")){
+                console.log("File");
+                base.href = "file:///Users/ar4j.in/Desktop/shreya5art.github.io/";
+            }else{
+                base.href = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+            }
+
+            document.getElementsByTagName('head')[0].appendChild(base);
+        </script>
         
         <div id="topbar" class="extendedSection row">
             <img src="files/res/logo.png" class="logo" />
