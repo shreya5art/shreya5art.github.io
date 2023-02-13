@@ -37,6 +37,7 @@ body, .body{
     display: inline-block;
     text-align: center;
     width: 100%;
+    margin: auto;
 }
 .col{
     display: inline-block;
@@ -130,6 +131,11 @@ nav > a{
 
 .mainContainer{
     min-height: auto;
+    display: none;
+    max-width: 900px;
+}
+.mainContainer:target{
+    display: block !important;
 }
 
 
@@ -518,11 +524,11 @@ nav > a{
     box-shadow:   0px 0px 0px 7px white, 1px 4px 20px 8px rgba(0, 0, 0, 0.1) ;
 }
 .polaroid:nth-child(1){ transform: rotate(-3deg); height: 100px; width: 70px; }
-.polaroid:nth-child(2){ transform: rotate(3deg); height: 100px; width: 120px; }
+.polaroid:nth-child(2){ transform: rotate(3deg); height: 100px; width: 110px; }
 .polaroid:nth-child(3){ transform: rotate(-4deg); height: 100px; width: 70px; }
-.polaroid:nth-child(4){ transform: rotate(2deg); height: 100px; width: 70px; }
+.polaroid:nth-child(4){ transform: rotate(2deg); height: 100px; width: 60px; }
 .polaroid:nth-child(5){ transform: rotate(-2deg); height: 100px; width: 70px; }
-.polaroid:nth-child(6){ transform: rotate(1deg); height: 100px; width: 100px; }
+.polaroid:nth-child(6){ transform: rotate(1deg); height: 100px; width: 90px; }
 
 
 .priceCalculator{
@@ -573,6 +579,19 @@ nav > a{
 }
 .faq{
     text-align: left;
+    border-bottom: solid gainsboro 1px;
+    padding: .25em;
+}
+.faq > .question, .faq > .answer{
+    position: relative;
+    margin: .75em;
+    
+    padding-left: 3.5em;
+    line-height: 1.25em;
+}
+.faq > .question::before, .faq > .answer::before{
+    position: absolute;
+    top: 0em; left: 2em;
 }
 .faq > .answer{
     overflow: hidden;
@@ -582,14 +601,53 @@ nav > a{
 .faq:focus > .answer{
     max-height: 10em;
 }
+.faq:last-of-type{
+    border: solid transparent 0;
+}
+.question , .answer{
+    
+}
+.question::after, .answer::after{
+    position: absolute;
+    top: 0em; left: 0em;
+    display: inline-block;
+    float: left;
+    content: "+";
+    width: 1em;
+    
+    text-align: center;
+    text-indent: 0;
+}
+.answer::after{
+    content: "\200B";
+}
+
+.faq:focus > .question::after, .answer::after{
+    content: "\200B";
+}
+
 
 .journey{
     position: relative;
-    width: 2em;
+    width: 140px;
     height: auto;
-    font-size: 70px;
+    font-size: 1em;
 
 }
+.journeyImg{
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+}
+.journey > span{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.journey > .extra{
+    display: none;
+}
+
 .journey > .icon{
     position: relative;
     
@@ -684,45 +742,109 @@ nav > a{
 
 .about.notebook{
     position: relative;
+    margin-left: 100px;
+    width: 600px;
+    height: 500px;
 }
 .about > .paperstack{
-    width: 360px;
+    width: 370px;
+    border-style: solid;
+    border-width: 10px;
+    
+}
+.about > .paperstack:nth-child(odd){
+    border-right-width: 0;
+}
+.about > .paperstack:nth-child(even){
+    border-left-width: 0;
 }
 .about > .tabbed{
     width: 220px;
 }
-
-
-
+.about.tab{
+    border-color: inherit;
+    border-style: solid;
+    border-width: 2px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    background-color: white !important;
+}
 
 .tabbed > .tab{
     position: absolute;
     top: 0; right: 100%;
-    width: 50px;
+    width: 100px;
+    font-size: .8em;
     height: 1.5em;
     line-height: 1.5em;
     background-color: bisque;
     box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.01);
-    padding: .5em;
-}
-.tabbed:nth-child(1) > .tab{
-    top: 2.7em;
-}
-.tabbed:nth-child(2) > .tab{
-    top: 5.4em;
+    padding: .35em;
+    margin-top: .5em;
 }
 .tabbed:nth-child(3) > .tab{
-    top: 8.1em;
-}
-.tabbed:nth-child(4) > .tab{
-    top: 10.8em;
+    top: 3em;
 }
 .tabbed:nth-child(5) > .tab{
+    top: 6em;
+}
+.tabbed:nth-child(7) > .tab{
+    top: 9em;
+}
+.tabbed:nth-child(9) > .tab{
+    top: 12em;
+}
+.tabbed:nth-child(11) > .tab{
     top: 13.5em;
 }
-.tabbed:nth-child(6) > .tab{
+.tabbed:nth-child(13) > .tab{
     top: 16.2em;
 }
+
+.tabbed:nth-child(1) , .tabbed:nth-child(1) > .tab , .tabbed:nth-child(1) + .paperstack{
+    outline-color: #F98E8E;
+    border-color: #F98E8E;
+}
+.tabbed:nth-child(3) , .tabbed:nth-child(3) > .tab , .tabbed:nth-child(3) + .paperstack{
+    outline-color: #A471C3;
+    border-color: #A471C3;
+}
+.tabbed:nth-child(5) , .tabbed:nth-child(5) > .tab , .tabbed:nth-child(5) + .paperstack{
+    outline-color: #71A6C3;
+    border-color: #71A6C3;
+}
+.tabbed:nth-child(7) , .tabbed:nth-child(7) > .tab , .tabbed:nth-child(7) + .paperstack{
+    outline-color: #7183C3;
+    border-color: #7183C3;
+}
+.tabbed:nth-child(9) , .tabbed:nth-child(9) > .tab , .tabbed:nth-child(9) + .paperstack{
+    outline-color: #73C371;
+    border-color: #73C371;
+}
+.tabbed:nth-child(11) , .tabbed:nth-child(11) > .tab , .tabbed:nth-child(11) + .paperstack{
+    outline-color: #A471C3;
+    border-color: #A471C3;
+}
+.tabbed:nth-child(13) , .tabbed:nth-child(13) > .tab , .tabbed:nth-child(13) + .paperstack{
+    outline-color: #A471C3;
+    border-color: #A471C3;
+}
+
+.table{
+    border-collapse: collapse;
+}
+
+
+tr > * {
+   
+    padding: .5em;
+    display: inline-block;
+}
+th::after{
+    content: ":";
+}
+
+
 
 .orderDialog{
     position: fixed;
@@ -1081,4 +1203,224 @@ nav > a{
     white-space: nowrap;
     margin: 3em 0;
     margin-bottom: 1em;
+}
+
+.orderBox{
+
+}
+.orderBox > .polaroid{
+    
+}
+
+.section{
+    padding: 2em 0;
+}
+
+.price::before{
+    content: "₹ ";
+}
+.price::after{
+    content: "";
+}
+
+#gallery{
+    background-image: url(../res/wall/galleryBackground.jpg);
+    background-attachment: fixed;
+    background-position: center;
+}
+#gallery::first-line{
+    content: "Hola";
+    background-color: red;
+}
+.artworkFrame{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 1em;
+    background-color: white;
+    border: solid rgb(0, 0, 0) 10px;
+    display: inline-block;
+    margin: 1em;
+    box-shadow: 1px 1px 8px 4px rgba(0, 0, 0, 0.5), inset -1px -1px 8px 1px rgba(0, 0, 0, 0.3);
+}
+.artworkFrame > img{
+    height: 200px;
+    width: auto;
+}
+.artworkFrame::before{
+    position: absolute;
+    font-size: .8em;
+    top: 3.53em;   
+    left: -10px;
+    content: "For Sale";
+    display: inline-block;
+    background-color: transparent;
+    width: 5em;
+    height: 0;
+    border: solid 1.5em transparent;
+    border-bottom-color: #FDC700;
+    border-top: 0;
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    z-index: 1;
+    
+}
+.artworkFrame::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 1;
+}
+.artworkFrame > .title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    padding: 1em;
+    height: auto;
+    text-align: left;
+    display: block;
+    opacity: 0;
+    text-shadow: 0 0 8px black;
+    color: white;
+    z-index: 2;
+}
+.artworkFrame:hover > img{
+    filter: blur(8px);
+}
+.artworkFrame:hover::before{
+    opacity: 0;
+}
+.artworkFrame:hover > .title, .artworkFrame:hover::after{
+    opacity: 1;
+}
+
+
+.col.artworkViewer{
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.col.artworkViewer > .artworkFrame{
+    position: relative;
+    max-width: 400px;
+    max-height: 400px;
+    width: auto;height: auto;
+    background-color: whitesmoke; 
+    box-sizing: border-box;
+
+}
+.artworkViewer.artworkFrame.portrait {
+    height: 400px;
+}
+.artworkViewer.artworkFrame.landscape {
+    width: 400px;
+}
+.artworkViewer.artworkFrame > img{
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+.artworkViewer.artworkFrame.portrait > img{
+    height: 100%;
+}
+.artworkViewer.artworkFrame.landscape > img{
+    width: 100%;
+}
+
+
+.col.artworkDescription{
+    text-align: left;
+}
+.salesBox{
+    position: relative;
+    margin-top: 1em;
+    border: solid rgb(82, 16, 124) 2px;
+    padding: 10px;
+    padding-top: 2em;
+    border-radius: 5px;
+}
+.salesBox::after{
+    position: absolute;
+    top: -1em;
+    right: 1em;
+    height: 1em;
+    width: auto;
+    padding: .5em 1em;
+    background-color: white;
+    content: "Buy Prints";
+    
+}
+.salesBox > .col:nth-child(2){
+    width: 100px;
+}
+.saleCustomizer{
+    width: 170px;
+}
+.saleCustomizer > label{
+    margin-top: .5em;
+}
+label{
+    display: block;
+}
+label > span{
+    width: 70px;
+    display: inline-block;
+}
+label > select{
+    width: 90px;
+}
+
+.artworkSwitcher > .thumbnail{
+    width: 54px; height: 54px;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+
+}
+.artworkSwitcher > i{
+    position: sticky;
+    height: 54px;
+    line-height: 54px;
+    width: 54px;
+    background-color: white;
+}
+.artworkSwitcher > *{
+    display: inline-block;
+    vertical-align: middle;
+}
+.artworkSwitcher > i:first-child{
+    left: 0;
+}
+.artworkSwitcher > i:last-child{
+    right: 0;
+}
+
+
+.horizontalScroller{
+    overflow-y: auto;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.tool, .post{
+    background-color: gray;
+    width: 90px; height: 90px;
+    margin-left: 5px;
+    margin-top: 5px;
+    display: inline-block;
+}
+.post{
+    width: 120px;
+}
+
+#galleryViewer > .col{
+    margin-top: 2em;
 }
