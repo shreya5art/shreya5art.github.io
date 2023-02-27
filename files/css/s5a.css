@@ -1,0 +1,35 @@
+.faq{
+
+}
+
+.faq::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.5em;
+    text-align: center;
+    display: inline-block;
+}
+.faq > *{
+    margin-left: 2em;
+}
+.faq::before{
+    content: "+";
+}
+.faq:focus::before{
+    content: "-";
+}
+
+.faq-ans{
+    display: none;
+}
+.faq:focus > .faq-ans{
+    display: block;
+}
+
+.faq-ques::before{
+    content: "Q ";
+}
+.faq-ans::before{
+    content: "A ";
+}
