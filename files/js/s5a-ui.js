@@ -2,29 +2,41 @@
 <html>
 
 <head>
-    <title>Shreya5art</title>
+    <title>Shreya5art®</title>
     <base href="/" />
     <link rel="stylesheet" href="files/css/index1.css" />
-    <link rel="stylesheet" href="files/css/dark.css" />
+    <link rel="stylesheet" href="files/css/dark1.css" />
     <link rel="stylesheet" media="(max-width: 1000px)" href="files/css/tab1.css" />
     <link rel="stylesheet" media="(max-width: 600px)" href="files/css/mobile.1css" />
     <link href="files/icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="files/js/common.js"></script>
     <script src="files/js/index.js"></script>
     <script src="database.js"></script>
 
+    <title>Shreya5art®</title>
+    <base href="/" />
+    <link href="files/icon/fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet">
+    <link href="files/icon/icomoon/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
-
-<body>
     <link rel="stylesheet" href="files/css/ui.css" />
     <link rel="stylesheet" href="files/css/s5a.css" />
+    <link rel="stylesheet" href="files/css/s5a-light.css" />
+    <link id="theme" rel="stylesheet" href="files/css/s5a-dark.css" />
+    <script src="files/js/s5a-ui.js"></script>
+
     <script src="files/js/jszip/dist/jszip.min.js" ></script>
     <script src="files/js/filesaver.js" ></script>
     <script src="files/js/ui.js"></script>
     <script src="files/js/s5a.js"></script>
+
+</head>
+
+<body onload="console.log(this); generatePages(true); generatePage1(document,window.location.pathname); ">
+    
     <canvas id="imgCanvas" ></canvas>
-    <iframe id="pageFrame" src="template.html" style="position: absolute; width: 100%; height: 100%; z-index: 10;" onload="console.log(this);generatePage(iframeRef(this),window.location.pathname)"></iframe>
+    <iframe id="pageFrame" src="template.html" style="position: absolute; width: 100%; height: 100%; z-index: 10;" onload="console.log(this);generatePage1(iframeRef(this),window.location.pathname)"></iframe>
 
     <div id="topbar" class="extendedSection row" style="max-width: 950px;">
         <img src="files/res/logo.png" class="logo" />

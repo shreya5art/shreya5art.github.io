@@ -1,0 +1,24 @@
+html{
+    background-color: white;
+}
+#footer{
+    background-color: gray;
+}
+.tornEffect{
+    color: white;
+}
+.mainBg{
+    background-color: white;
+}
+.layerBg{
+    background-color: white;
+}
+
+.card, .hasBg{
+    background-color: white;
+    filter: drop-shadow(1px 1px 8px rgba(0,0,0,0.1));
+}
+
+#themeToggle::before{
+    content: "\f6c3";
+}
