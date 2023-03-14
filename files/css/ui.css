@@ -14,6 +14,38 @@ body{
 .fixed{
     transition: none;
 }
+.horizontalScrollerParent{
+    overflow-y: hidden;
+    overflow-x: scroll;
+    
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    height: auto;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+.horizontalScrollerParent::-webkit-scrollbar{
+    background: transparent; /* Chrome/Safari/Webkit */
+    width: 0px;
+}
+.horizontalScroller{    
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    height: auto;
+    width: auto;
+
+}
+.horizontalScroller::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: red;
+    top: 100%;
+    z-index: 10;
+    display: none;
+}
 
 *{
     color: inherit;
@@ -43,7 +75,8 @@ body{
         top: 0; left: calc( (100% - 100vw)/2 );
         width: calc(100vw); height: 100%;
         width: 100dvw;
-        left: calc((100%-100dvw)/2);
+        left: 50%;
+        transform: translate(-50%);
         background: inherit;
         box-shadow: inherit;
         z-index: 1;
@@ -214,7 +247,7 @@ input, select, textarea{
 }
 
 .mediaSection{
-    padding: 1em;
+    padding: 0 1em;
 }
 .mediaSwitcher{
     flex-wrap: nowrap;
@@ -248,4 +281,14 @@ input, select, textarea{
 }
 .inline{
     display: inline;
+}
+
+#disqus_thread{
+    margin-top: 2em;
+    margin: 1em auto;
+    padding: 1em;
+    box-sizing: border-box;
+}
+.commentSection{
+    margin-top: 3em;;
 }

@@ -25,12 +25,11 @@ html{
     color: rgba(255, 255, 255, 0.54);
 }
 
-#themeToggle::before{
-    content: "\f6c4";
-}
+
 
 .card, .hasBg{
     background-color: rgba(255,255,255,.025);
+    fill: rgba(255,255,255,.025);
     filter: unset;
 }
 
@@ -64,3 +63,6 @@ html{
     color: white;
 }
 
+#path248, #path250{
+    opacity: .3;
+}

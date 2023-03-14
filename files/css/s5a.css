@@ -198,6 +198,18 @@ a{
 .noGap{
     padding: 0em !important;
 }
+.artworkDiary{
+    justify-content: center;
+}
+.artworkPicOnly{
+    
+}
+.artworkPicOnly > .img{
+    height: 150px;
+}
+.artworkPicOnly{
+    padding: 1em;
+}
 
 .artworkFrame , .artwork.main {
     margin: 1em;
@@ -207,6 +219,10 @@ a{
 }
 .artworkFrame > img{
     height: 200px;
+    width: auto;
+}
+.artworkFrame.smaller > img{
+    height: 120px;
     width: auto;
 }
 .artwork.main > img.portrait{
@@ -266,6 +282,19 @@ a{
     opacity: 1;
 }
 
+.artworkDesc{
+    padding: 10px;
+    min-height: 450px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .artworkDesc{
+        min-height: auto !important;
+    }
+    
+}
 
 .smartphone{
     padding: .5em;
@@ -382,12 +411,8 @@ a{
 }
 
 
-.notebook{
-    display: table;
-}
-.paperstack{
-    display: table-cell; 
-}
+
+
 .paperstack.left{
     border-right: solid 30px transparent;
 }
@@ -408,12 +433,7 @@ a{
     z-index: -1;
     
 }
-.paperstack.left{
-    left: -3px;
-}
-.paperstack.right{
-    right: -3px;
-}
+
 .paperstack::before{
     content: "";
     position: absolute;
@@ -431,40 +451,42 @@ a{
     right: 100%;
 }
 
+.paperstack.left{
+    top : -3px;
+}
+.paperstack.right{
+    right: 0px;
+    bottom: -3px;
+}
+.notebook{
+    display: flex;
+}
+.paperstack{
+    display: flex;
+}
+.paperstack::before{
+    width: 100%;
+    height: 30px;
+    background-repeat: repeat-x;
+    top: 100%;
+    left: 0;
+}
+.paperstack.left{
+    border: 0;
+    border-bottom: solid transparent 30px;
+}
+.paperstack.right{
+    border: 0;
+    border-top: solid transparent 30px;
+}
+.paperstack.right::before{
+    bottom: 100%;
+    top: unset;
+    right: unset;
+    left: 0;
+}
 @media (max-width: 600px){
-    .paperstack.left{
-        left:0px;
-    }
-    .paperstack.right{
-        right: 0px;
-    }
-    .notebook{
-        display: flex;
-    }
-    .paperstack{
-        display: flex;
-    }
-    .paperstack::before{
-        width: 100%;
-        height: 30px;
-        background-repeat: repeat-x;
-        top: 100%;
-        left: 0;
-    }
-    .paperstack.left{
-        border: 0;
-        border-bottom: solid transparent 30px;
-    }
-    .paperstack.right{
-        border: 0;
-        border-top: solid transparent 30px;
-    }
-    .paperstack.right::before{
-        bottom: 100%;
-        top: unset;
-        right: unset;
-        left: 0;
-    }
+    
 }
 
 .orderSlideShow{
@@ -504,6 +526,15 @@ a{
     width: 100%;;
 }
 
+.blogPage{
+
+}
+.blogPage.minimal > .blogHeading{
+    display: none;
+}
+.blogPage.minimal > .ruledPage {
+    padding-left: 1.2em;
+}
 .blogDate{
     justify-content: flex-end;
     margin: .5em;
@@ -548,6 +579,10 @@ a{
 }
 .sideNav > a{
 
+}
+
+.contactCard {
+    padding: 1em;
 }
 
 .contactForm{
@@ -642,6 +677,9 @@ a{
     border-color: rgb(82, 16, 124);
     color: white !important;
 }
+.buttonRow{
+    padding: 1em;
+}
 
 .blogIntro{
     margin: .5em;
@@ -654,7 +692,9 @@ a{
 .artworkDetails.tr{
     margin: .5em 0;
 }
-
+.salesRow > .label{
+    margin: .5em;
+}
 .salesBox{
     position: relative;
     margin-top: 1em;
@@ -662,11 +702,15 @@ a{
     padding: 10px;
     padding-top: 2em;
     border-radius: 5px;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .salesBox::after{
+    color: inherit;
     position: absolute;
+    font-size: 1.2em;
     top: -1em;
-    right: 1em;
+    left: 1em;
     height: 1em;
     width: auto;
     padding: .5em 1em;
@@ -675,8 +719,21 @@ a{
     content: "Buy Now";
     
 }
-.salesBox > .col:nth-child(2){
-    width: 150px;
+.salesBox.noSale::after{
+    content: "Order Your Own Artwork"
+}
+
+
+.printPrice{
+    
+    vertical-align: middle;
+}
+.printPrice > .price{
+    font-size: 1.3em;
+    margin-left: .5em;
+}
+.buyAction{
+    justify-content: space-between;
 }
 
 .polaroid{
@@ -729,7 +786,7 @@ a{
 
 
 .price::before{
-    content: "₹ ";
+    content: " ";
 }
 
 .link.underlined{
@@ -752,6 +809,9 @@ a{
     width: 100vw;
     max-width: 100vw;
 
+}
+.tornEffectSvg, .tornEffectSvg > svg{
+    width: 100%;
 }
 
 .footerInfo{
