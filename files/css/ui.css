@@ -9,6 +9,8 @@ body{
     max-width: 1200px;
     width: 100%;
     background-color: inherit;
+
+   
 }
 
 .fixed{
@@ -114,6 +116,9 @@ body{
 }
 .col.one_half{
     width: 450px;
+}
+.col.one_quarter3{
+    width: 525px;
 }
 .col.grow{
     flex: 1;

@@ -24,17 +24,30 @@ body{
 }
 
 .headingStyle{
-    height: 1em;
-    width: 100px;
+    height: .8em;
+    width: auto;
     margin: 0 .5em;
     opacity: .4;
     align-items: center;
 }
-.headingStyle > .svg{
+.headingStyle > svg{
     height: 1em;
 }
 .headingStyle:first-child{
     transform: scale(-1,1);
+}
+
+@media (max-width: 450px){
+
+    
+
+    .headingStyle{
+        width: 100%;
+        margin: .5em;
+    }
+    .headingStyle > svg{
+        height: .5em;
+    }
 }
 
 
@@ -79,12 +92,16 @@ a{
 
 @media (max-width: 900px) {
 
+    .smartphone{
+        margin-top: 2em;
+    }
+
     #topbarNav{ 
         position: absolute;
         top: 0; left: 0;
     }
     #logo{
-        margin-left: 2em;
+        margin-left: 3.5em;
     }
     #topbarNav{
         top: 100%;
@@ -96,6 +113,9 @@ a{
         overflow: hidden;
         max-height: 0;
         transition: max-height .2s ease;
+        background-color: rgb(23,5,23);
+        border-radius: 3px;
+        color: white;
     }
     #topbarNav > .col{
         width: 100%;
@@ -107,12 +127,20 @@ a{
         left: 0;
         height: 100%;
         width: 2em;
+        margin-left: 1em;
     }
     #topbarNavBox > .icon{
         display: flex;
+        width: 2em;
+        height: 2em;
+        
+        line-height: 2em;
+        text-align: center;
+        justify-content: center;
     }
     #topbarNavBox:hover > .col, #topbarNav:hover {
         max-height: 20em;;
+        margin-left: .5em;
     }
 
 }
@@ -205,7 +233,7 @@ a{
     
 }
 .artworkPicOnly > .img{
-    height: 150px;
+    height: 120px;
 }
 .artworkPicOnly{
     padding: 1em;
@@ -647,6 +675,9 @@ a{
     margin-bottom: 2em;
     justify-content: flex-start;
 }
+.sidebarCol > .col{
+    padding: 5px;
+}
 .sidebarCol > .icon{
     margin: .5em 0;
     font-weight: bold;
@@ -659,6 +690,73 @@ a{
 .sidebarCol > .icon::before{
     margin-right: 1em;
 }
+
+.sidebarMenuBox > *{
+    margin: .25em 0;
+}
+
+@media (max-width: 850px){
+    .sidebar{
+        width: 100% !important;
+        position: sticky;
+        top: 3em;
+        z-index: 2;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+    .sidebar + *{
+        z-index: 1;
+    }
+    .sidebarCol{
+        margin-bottom: 0;
+    }
+    .sidebarCol > .icon{
+        background-color: rgb(22,5,22) !important;
+        color: white;
+        width: 2em;
+        height: 2em;
+        text-align: 2em;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        margin: .5em;
+
+    }
+    .sidebarCol > .icon::before{
+        margin: 0;
+
+    }
+    .sideBarIcon > .span{
+        display: none;
+        width: auto;
+    }
+    .sidebarCol > .row{
+        position: absolute;
+        top: 100%; right: 0;
+        opacity: 0;
+        z-index: 50;
+        background-color: rgb(22,5,22);
+        color: white;
+        border: 3px;
+        max-width: 300px !important;
+        width: 240px;
+        padding: 10px;
+        border-radius: 4px;
+
+        max-height: 70vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .sidebarCol:hover > .row{
+        opacity: 1;
+    }
+
+    .resetFilterSort{
+        background-color: rgb(22,5,22) !important;
+    }
+}
+
 
 .button{
     border: solid black 2px;
@@ -786,7 +884,7 @@ a{
 
 
 .price::before{
-    content: " ";
+    content: "₹ ";
 }
 
 .link.underlined{
@@ -854,3 +952,5 @@ justify-content: flex-end;
         justify-content: flex-start !important;
     }
 }
+
+
