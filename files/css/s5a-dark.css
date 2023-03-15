@@ -34,9 +34,7 @@ html{
 }
 
 
-#footer{
-    background-color: rgb(21,3,21);
-}
+
 
 .ruledPage{
 
@@ -65,4 +63,14 @@ html{
 
 #path248, #path250{
     opacity: .3;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+}
+
+
+#footer{
+    background-color: rgb(21,3,21) ;
+    color: rgba(255, 255, 255, 0.64) ;
 }

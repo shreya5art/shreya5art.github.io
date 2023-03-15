@@ -1,7 +1,21 @@
+@font-face{ 
+	font-family: 'MyWebFont';
+	src: url('../font/CaviarDreams-webfont.woff') format('woff'),	     
+}
+
 html{
-    font-family: 'SF-Body-font',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-family: 'MyWebFont','SF-Body-font',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-family: MyWebFont;
 
 }
+
+#mainContent{
+    z-index: 2;
+}
+#footer{
+    z-index: 1;
+}
+
 body{
 
 }
@@ -571,6 +585,7 @@ a{
     line-height: 1.6em;
     font-size: 1.5em;
     margin-bottom: .8em;
+    padding: 0;
 }
 .ruledPage > .heading._3{
     margin: 0;
@@ -737,7 +752,6 @@ a{
         z-index: 2;
         justify-content: flex-end;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.1) !important;
     }
     .sidebar + *{
         z-index: 1;
@@ -1003,4 +1017,19 @@ justify-content: flex-end;
 }
 .legalPage > h3{
     font-size: 1.25em;;
+}
+
+
+.footerStat > span{
+    font-size: 2.25em;
+}
+.footerStat > .heading{
+    margin: .25em;
+}
+.footerStatValue{
+    justify-content: center;
+}
+.footerStatValue > .mod{
+    margin-bottom: 1em;
+    font-size: .5em;
 }

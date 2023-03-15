@@ -28,6 +28,10 @@ body{
 
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* IE 10+ */
+    padding-bottom: .5em;
+}
+.horizontalScroller > .horizontalScroller{
+    margin-bottom: .5em;
 }
 .horizontalScrollerParent::-webkit-scrollbar{
     background: transparent; /* Chrome/Safari/Webkit */
@@ -35,18 +39,20 @@ body{
 }
 
 ::-webkit-scrollbar {
+    background-color: transparent;
     width: 5px;
     height: 5px;
 }
   
 ::-webkit-scrollbar-thumb {
-    background: rgba(90, 90, 90);
+    background-color: currentColor;
+    opacity: .2;
     width: 5px;
     height: 5px;;
 }
   
 ::-webkit-scrollbar-track {
-    background-color: rgba(9,9,9);
+    background-color: transparent;
     width: 5px;
     height: 5px;
 }
@@ -124,6 +130,9 @@ body{
 }
 .col.two{
     width: 600px;
+}
+.col.three{
+    width: 900px;
 }
 .col.half{
     width: 150px;
