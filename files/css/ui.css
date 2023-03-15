@@ -2,6 +2,7 @@ html{
     max-width: 100% !important;
     justify-content: space-around !important;
     overflow-x: hidden;
+    overflow: overlay;
 }
 body{
     justify-content: space-around;
@@ -9,6 +10,7 @@ body{
     max-width: 1200px;
     width: 100%;
     background-color: inherit;
+    
 
    
 }
@@ -29,8 +31,26 @@ body{
 }
 .horizontalScrollerParent::-webkit-scrollbar{
     background: transparent; /* Chrome/Safari/Webkit */
-    width: 0px;
+    width: 5px;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+    width: 5px;
+    height: 5px;;
+}
+  
+::-webkit-scrollbar-track {
+    background-color: rgba(9,9,9);
+    width: 5px;
+    height: 5px;
+}
+
 .horizontalScroller{    
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
@@ -89,7 +109,7 @@ body{
 }
 .heading{
     width: 100%;
-   
+    padding: 5px;
     overflow: visible;
 }
 
@@ -152,6 +172,7 @@ body{
     overflow: hidden;
 }
 .p{
+    padding: 5px;
     text-align: left;
     justify-content: flex-start;
 }
@@ -243,6 +264,7 @@ body{
 input, select, textarea{
     background-color: inherit;
     color: inherit;
+    font-size: inherit;
 }
 
 .svg > svg{

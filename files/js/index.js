@@ -1,7 +1,30 @@
-function themeToggle(elem){
-    let theme = document.getElementById("theme");
-    theme.disabled = !theme.disabled;
-    if(theme.disabled){
+function setCookie(name,value,days=365) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {   
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+
+function updateThemeToggle(theme){
+    let elem = document.getElementById("themeToggle");
+    if(theme){
         elem.classList.add(icons.moon);
         elem.classList.remove(icons.sun);
 
@@ -9,6 +32,32 @@ function themeToggle(elem){
         elem.classList.add(icons.sub);
         elem.classList.remove(icons.moon);
     }
+}
+function themeSet(){
+    let cur = getCookie("theme");
+    if(cur == null){
+        cur = true;
+    }
+    let theme = document.getElementById("theme");
+    theme.disabled = cur;
+    updateThemeToggle(theme.disabled);
+};
+
+
+
+
+function themeToggle(elem){
+    let theme = document.getElementById("theme");
+    theme.disabled = !theme.disabled;
+
+    setCookie("theme",theme.disabled);
+    
+    updateThemeToggle(theme.disabled);
+    
+}
+
+function toggleActive(elem){
+    elem.classList.toggle("active");
 }
 
 window.onscroll = function(e){
@@ -50,7 +99,7 @@ function galleryFilter(form, gallery){
 
 }
 
-function priceCalculator(form, submit = false) {
+function priceCalculator(form, submit = false, event) {
 
     console.log(form);
 
@@ -71,23 +120,6 @@ function priceCalculator(form, submit = false) {
 
     if (bg == "noBg") bgPrice = 0;
     if (frame == "noFrame") framePrice = 0;
-
-    const sizeMap = new Map();
-    sizeMap.set("A2", [(16 + 1 / 2), (23 + 3 / 8)]);
-    sizeMap.set("A3", [(11 + 3 / 4), (16 + 1 / 2)]);
-    sizeMap.set("11x14", [(11), (14)]);
-    sizeMap.set("9x12", [(9), (12)]);
-    sizeMap.set("A4", [(8 + 1 / 4), (11 + 3 / 4)]);
-    sizeMap.set("A5", [(5 + 7 / 8), (8 + 1 / 4)]);
-
-    const priceMap = new Map();
-    priceMap.set("graphite", 1);
-    priceMap.set("color", 1.3);
-    priceMap.set("mix", 1.75);
-    priceMap.set("single", 1);
-    priceMap.set("couple", 1.15);
-    priceMap.set("family", 1.3);
-    priceMap.set("group", 1.5);
 
     basePrice = customBasePrice;
     baseSize = sizes.A5.size[0]*sizes.A5.size[1];
@@ -117,9 +149,38 @@ function priceCalculator(form, submit = false) {
     a.href = "mailto:order@shreya5art.in?subject=New%20Customized%20Artwork&body="+body.value;
     a.click();
     }
-    
+
+    event.preventDefault();
+}
+
+function calculatePrintEstimate(id,base,form,submit,event){
+    var formData = new FormData(form);
+    var material = formData.get("material");
+    var size = formData.get("size");
+
+    if(base == undefined){
+        base = 400;
+    }
+
+    price = base + sizes[size].print * printSurface[material].print; 
+
+    form.getElementsByClassName("printEstimate")[0].innerHTML = price;
+
+    if(submit){
+        let a = document.createElement("A");
+        a.href = "mailto:order@shreya5art.in?subject=Print%20Order&body=New%20Order%20for%20Print%20of%20artwork:%0D%0AId:"+id+"%0D%0AMaterial%20:"+ encodeURI( printSurface[material].name)+"["+material+"]%0D%0ASize%20:%20"+sizes[size].name+"%0D%0AQuantity%20:%201";
+        a.click();
+    }
+
+    event.preventDefault();
 
 }
+
+
+function generateMail(){
+
+}
+
 
 function activateAboutTab(elem) {
     let tabs = document.getElementsByClassName("aboutTab");
