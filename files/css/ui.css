@@ -15,6 +15,11 @@ body{
    
 }
 
+a,a:link,a:visited,a:active{
+    color: inherit;
+
+}
+
 .fixed{
     transition: none;
 }
